@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		LineFileReader lineFileReader = new LineFileReader();
 		List<String> lines = lineFileReader.getLinesFromFile(
-				"/Users/Alexander/Projects/stockfiletoinfluxconverter/disney.txt"
+				args[0]
 		);
 
 		final InfluxdbDAO influxdbDAO = new InfluxdbDAO();

@@ -15,6 +15,11 @@ public class Main {
 				args[0]
 		);
 
+		String dbName = "test";
+		if(args.length >= 2) {
+			dbName = args[1];
+		}
+
 		final InfluxdbDAO influxdbDAO = new InfluxdbDAO();
 
 		lines.remove(0);
@@ -24,7 +29,7 @@ public class Main {
 			influxdbDAO.writeInflux(
 					stockFileLineExtractor.getPriceFromRow(),
 					DateTime.createFromTimeStamp(stockFileLineExtractor.getTimeStamp()),
-					"stocks-test"
+					dbName
 			);
 		});
 	}

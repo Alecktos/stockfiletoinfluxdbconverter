@@ -15,11 +15,7 @@ public class Main {
 				args[0]
 		);
 
-		String dbName = "test";
-		if(args.length >= 2) {
-			dbName = args[1];
-		}
-
+		final String dbName = args.length >= 2 ? args[1] : "test";
 		final InfluxdbDAO influxdbDAO = new InfluxdbDAO();
 
 		lines.remove(0);
